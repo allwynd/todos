@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <button type="button" id="toggle-import-button" class="import-toggle-button" aria-expanded="false" aria-controls="import-row" aria-label="Show file import">
+      <span aria-hidden="true">📁</span>
+    </button>
+    <header>
+      <h1>Todo List</h1>
+      <p>Manage tasks: add, edit, complete, and delete.</p>
+    </header>
+
+    <form id="todo-form" class="todo-form">
+      <div class="form-row">
+        <input id="task-input" type="text" placeholder="Enter a new task" autocomplete="off" />
+        <input id="due-date-input" type="datetime-local" aria-label="Due date and time" />
+      </div>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div id="import-row" class="import-row hidden">
+      <label for="task-file-input">Load task list from file</label>
+      <div class="file-input-row">
+        <input id="task-file-input" type="file" accept=".json,.txt" aria-label="Choose a task file" />
+        <button type="button" id="load-file-button">Load Tasks</button>
+      </div>
+    </div>
+
+    <div class="tasks-header">
+      <div class="task-sections" role="tablist" aria-label="Task sections">
+        <button type="button" id="active-tab" class="section-tab active" role="tab" aria-selected="true">Active</button>
+        <button type="button" id="completed-tab" class="section-tab" role="tab" aria-selected="false">Completed</button>
+      </div>
+    </div>
+
+    <div class="tasks-container">
+      <ul id="todo-list" class="todo-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
