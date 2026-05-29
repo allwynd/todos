@@ -409,7 +409,7 @@ function bindEvents() {
 
 function init() {
   loadTasks();
-  console.log('Displaying todos as JSON string: ', JSON.stringify(tasks));
+  //console.log('Displaying todos as JSON string: ', JSON.stringify(tasks));
   bindEvents();
   setImportVisibility(false);
   setActiveTab(currentView);
